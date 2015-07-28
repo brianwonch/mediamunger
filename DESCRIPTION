@@ -1,0 +1,8 @@
+Package: ixmunge
+Title: Utilities for Munging iCrossing data
+Version: 0.0.0.9000
+Authors@R: person("Brian", "Wonch", email = "brian.wonch@icrossing.com", role = c("aut", "cre", "cst"))
+Description: A collection of helper functions to clean, filter, and summarise common data formats from Kenshoo and social networks. 
+Depends: R (>= 3.2.1)
+License: What license is it under?
+LazyData: true
