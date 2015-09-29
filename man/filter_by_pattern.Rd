@@ -4,7 +4,7 @@
 \alias{filter_by_pattern}
 \title{Filter a data frame by values matching a pattern}
 \usage{
-filter_by_pattern(df, colname, pattern, exclude = FALSE, ignore.case = T)
+filter_by_pattern(df, colname, pattern, exclude = FALSE, ignore.case = TRUE)
 }
 \arguments{
 \item{df}{A data frame}
@@ -14,6 +14,8 @@ filter_by_pattern(df, colname, pattern, exclude = FALSE, ignore.case = T)
 \item{pattern}{Regular expression pattern to match for filtering}
 
 \item{exclude}{Exclude cases matching pattern? Defaults to FALSE.}
+
+\item{ignore.case}{Boolean whether string searches should be case-insensitive}
 }
 \value{
 a filtered data frame

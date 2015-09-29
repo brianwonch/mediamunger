@@ -18,6 +18,6 @@ dataframe with adjusted column names
 Convert column names to proper case and convert underscore to spaces
 }
 \examples{
-proper_names(mtcars, underscore_to_spaces=T)
+proper_names(mtcars)
 }
 

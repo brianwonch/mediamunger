@@ -1,13 +1,12 @@
 #' Change numeric columns into strings with commas.
 #'
-#' @param df
+#' @param df input data frame whose numeric columns should be made comma'd strings
 #'
 #' @return df with numeric columns as pretty strings, using scales::comma.
 #' @export
-#' @importFrom scales comma
 #' @importFrom magrittr "%>%"
 #'
-#' @examples mtcars %>% comma_numeric_cols
+#' @examples comma_numeric_cols(mtcars)
 comma_numeric_cols = function(df){
     numerics = df %>% sapply(function(x)is.numeric(x)) %>% which %>% names
     df[,numerics] = sapply(df[,numerics], function(x){

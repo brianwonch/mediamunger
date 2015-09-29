@@ -1,10 +1,9 @@
 #' Calculate aggregate sums and ratios of facebook metrics
 #'
-#' @param df
+#' @param df input data frame
 #'
 #' @return summarized data frame
 #' @export
-#' @importFrom dplyr summarise mutate
 #' @importFrom magrittr "%>%"
 fb_summarise = function(df){
     df %>%
@@ -14,12 +13,6 @@ fb_summarise = function(df){
                 impressions, na.rm = T),
             amount_spent_usd = sum(
                 amount_spent_usd, na.rm = T),
-            action_values_28d_click_offsite_conversion_add_to_cart = sum(
-                action_values_28d_click_offsite_conversion_add_to_cart,
-                na.rm = T),
-            action_values_28d_view_offsite_conversion_add_to_cart = sum(
-                action_values_28d_view_offsite_conversion_add_to_cart,
-                na.rm = T),
             page_likes_28_days_after_clicking = sum(
                 page_likes_28_days_after_clicking,
                 na.rm = T),
@@ -62,35 +55,11 @@ fb_summarise = function(df){
             page_engagement_28_days_after_viewing = sum(
                 page_engagement_28_days_after_viewing,
                 na.rm = T),
-            action_values_28d_click_offsite_conversion_checkout = sum(
-                action_values_28d_click_offsite_conversion_checkout,
+            checkouts_conversion_pixel__28_days_after_clicking = sum(
+                checkouts_conversion_pixel__28_days_after_clicking,
                 na.rm = T),
-            action_values_28d_view_offsite_conversion_checkout = sum(
-                action_values_28d_view_offsite_conversion_checkout,
-                na.rm = T),
-            action_values_28d_click_offsite_conversion_registration = sum(
-                action_values_28d_click_offsite_conversion_registration,
-                na.rm = T),
-            action_values_28d_view_offsite_conversion_registration = sum(
-                action_values_28d_view_offsite_conversion_registration,
-                na.rm = T),
-            actions_28d_click_offsite_conversion_add_to_cart = sum(
-                actions_28d_click_offsite_conversion_add_to_cart,
-                na.rm = T),
-            actions_28d_view_offsite_conversion_add_to_cart = sum(
-                actions_28d_view_offsite_conversion_add_to_cart,
-                na.rm = T),
-            checkouts_conversion_pixel28_days_after_clicking = sum(
-                checkouts_conversion_pixel28_days_after_clicking,
-                na.rm = T),
-            checkouts_conversion_pixel28_days_after_viewing = sum(
-                checkouts_conversion_pixel28_days_after_viewing,
-                na.rm = T),
-            actions_28d_click_offsite_conversion_registration = sum(
-                actions_28d_click_offsite_conversion_registration,
-                na.rm = T),
-            actions_28d_view_offsite_conversion_registration = sum(
-                actions_28d_view_offsite_conversion_registration,
+            checkouts_conversion_pixel__28_days_after_viewing = sum(
+                checkouts_conversion_pixel__28_days_after_viewing,
                 na.rm = T),
             post_comments_28_days_after_clicking = sum(
                 post_comments_28_days_after_clicking,
@@ -119,12 +88,8 @@ fb_summarise = function(df){
                 offer_claims_28_days_after_viewing,
             page_engagement = page_engagement_28_days_after_clicking +
                 page_engagement_28_days_after_viewing,
-            actions_checkouts = action_values_28d_view_offsite_conversion_checkout +
-                action_values_28d_click_offsite_conversion_checkout,
-            checkouts = checkouts_conversion_pixel28_days_after_clicking +
-                checkouts_conversion_pixel28_days_after_viewing,
-            action_registration =  actions_28d_click_offsite_conversion_registration +
-               actions_28d_view_offsite_conversion_registration
+            checkouts = checkouts_conversion_pixel__28_days_after_clicking +
+                checkouts_conversion_pixel__28_days_after_viewing
         ) %>%
 
         dplyr::mutate(

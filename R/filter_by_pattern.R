@@ -4,23 +4,21 @@
 #' @param colname String column name on which to filter
 #' @param pattern Regular expression pattern to match for filtering
 #' @param exclude Exclude cases matching pattern? Defaults to FALSE.
+#' @param ignore.case Boolean whether string searches should be case-insensitive
 #'
 #' @return a filtered data frame
 #' @export
-#'
-#' @importFrom dplyr filter_
-#' @importFrom lazyeval interp
 #' @examples filter_by_pattern(iris, "Species", "v.r")
 #'
 filter_by_pattern = function(df,
                              colname,
                              pattern,
                              exclude = FALSE,
-                             ignore.case = T){
+                             ignore.case = TRUE){
 
     if(exclude){
 
-        filter_pattern = interp(~ !grepl(pattern,
+        filter_pattern = lazyeval::interp(~ !grepl(pattern,
                                          colname,
                                          ignore.case = ignore.case),
                                 colname = as.name(colname)
@@ -28,7 +26,7 @@ filter_by_pattern = function(df,
 
     } else {
 
-        filter_pattern = interp(~ grepl(pattern,
+        filter_pattern = lazyeval::interp(~ grepl(pattern,
                                         colname,
                                         ignore.case = ignore.case),
                                 colname = as.name(colname)

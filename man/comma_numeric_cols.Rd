@@ -7,7 +7,7 @@
 comma_numeric_cols(df)
 }
 \arguments{
-\item{df}{}
+\item{df}{input data frame whose numeric columns should be made comma'd strings}
 }
 \value{
 df with numeric columns as pretty strings, using scales::comma.
@@ -16,6 +16,6 @@ df with numeric columns as pretty strings, using scales::comma.
 Change numeric columns into strings with commas.
 }
 \examples{
-mtcars \%>\% comma_numeric_cols
+comma_numeric_cols(mtcars)
 }
 

@@ -6,12 +6,14 @@
 #' @return dataframe with adjusted column names
 #' @export
 #'
-#' @examples proper_names(mtcars, underscore_to_spaces=T)
-proper_names = function(df, underscore_to_spaces=TRUE){
-    proper = function(x){
+#' @examples proper_names(mtcars)
+proper_names <- function(df, underscore_to_spaces = TRUE){
+    proper <- function(x){
         paste0(toupper(substr(x, 1, 1)), tolower(substring(x, 2)))
     }
-    nms = proper(names(df))
+    nms <- proper(names(df))
     if (underscore_to_spaces) nms = gsub("_"," ", nms)
+    nms <- gsub("(^|[[:space:]])([[:alpha:]])", "\\1\\U\\2", nms, perl=TRUE)
+
     setNames(df, nms)
 }

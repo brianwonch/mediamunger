@@ -5,15 +5,13 @@
 \title{Load a Kenshoo report from an FTP location}
 \usage{
 load_kenshoo_ftp(report_name, ftp_address = "ftp.kenshoo.com",
-  col_types = NULL, is.csv = TRUE, username = NULL, password = NULL,
-  save.creds = FALSE, creds.file = NULL)
+  is.csv = TRUE, username = NULL, password = NULL, save.creds = FALSE,
+  creds.file = NULL)
 }
 \arguments{
 \item{report_name}{String of the report filename.  ".csv" is appended if you exclude it.}
 
 \item{ftp_address}{String with the domain name.  Default is "ftp.kenshoo.com"}
-
-\item{col_types}{One of NULL, a list, a named list or a string, as documented in \code{\link{read_csv}}}
 
 \item{is.csv}{Boolean if the file is csv.}
 

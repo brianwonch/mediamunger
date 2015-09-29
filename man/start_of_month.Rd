@@ -7,7 +7,7 @@
 start_of_month(date)
 }
 \arguments{
-\item{date}{A 'Date' object, or character string in the format "%Y-%m-%d" or "%Y/%m/%d"}
+\item{date}{A 'Date' object, or character string in the format "\%Y-\%m-\%d" or "\%Y/\%m/\%d"}
 }
 \value{
 A Date object that is the first date of the respective calendar month.

@@ -1,8 +1,10 @@
-Package: ixmunge
-Title: Utilities for Munging iCrossing data
+Package: mediamunger
+Title: Utilities for Munging Kenshoo, Social, and Display data
 Version: 0.0.0.9000
-Authors@R: person("Brian", "Wonch", email = "brian.wonch@icrossing.com", role = c("aut", "cre", "cst"))
-Description: A collection of helper functions to clean, filter, and summarise common data formats from Kenshoo and social networks. 
+Author: Brian Wonch
+Maintainer: Brian Wonch <Brian.Wonch@gmail.com>
+Description: Misc functions to clean, filter, and summarise common data formats from Kenshoo and social networks. 
 Depends: R (>= 3.2.1)
-License: What license is it under?
+License: GPL (>= 2)
 LazyData: true
+Imports: lazyeval, magrittr, scales, stringr, stringi, ggplot2, lubridate, tidyr, plyr, dplyr, ReporteRs, reshape2

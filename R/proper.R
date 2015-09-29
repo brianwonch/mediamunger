@@ -6,6 +6,6 @@
 #' @export
 #'
 #' @examples proper("abc")
-proper = function(str){
+proper <- function(str){
     paste0(toupper(substr(str, 1, 1)), tolower(substring(str, 2)))
 }

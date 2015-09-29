@@ -7,7 +7,7 @@
 fb_summarise(df)
 }
 \arguments{
-\item{df}{}
+\item{df}{input data frame}
 }
 \value{
 summarized data frame
