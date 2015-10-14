@@ -1,5 +1,9 @@
-.Rproj.user
-.Rhistory
-.RData
-.Rbuildignore
-.pdf
+*.Rproj
+*.user
+
+*.Rhistory
+
+*.RData
+
+*.Rbuildignore
+
