@@ -11,8 +11,9 @@ theme_nice = function(base_size = 20, base_family = ""){
     theme(
         line = element_line(colour = "black", size = 0.5, linetype = 1, lineend = "butt"),
         rect = element_rect(fill = "white", colour = "black", size = 0.5, linetype = 1),
-        text = element_text(family = base_family, face = "plain", colour = "#564D49", size = base_size, hjust = 0.5, vjust = 0.5, angle = 0, lineheight = 0.9),
-
+        text = element_text(family = base_family, face = "plain", colour = "#564D49", 
+                            size = base_size, hjust = 0.5, vjust = 0.5, angle = 0, lineheight = 0.9,
+                            margin = margin(), debug = FALSE),
         axis.text = element_text(size = rel(1), colour = "grey50"),
         strip.text = element_text(size = rel(1.4)),
         axis.line = element_line(size=.5,color="#2B221E"),
@@ -23,7 +24,6 @@ theme_nice = function(base_size = 20, base_family = ""){
         axis.title.y = element_text(angle = 90,size=rel(1.2), face="bold"),
         axis.ticks.length = grid:::unit(0.15, "cm"),
         axis.ticks.margin = grid:::unit(0.2, "cm"),
-
         legend.background = element_rect(colour = NA),
         legend.margin = grid:::unit(0.3, "cm"),
         legend.key = element_rect(fill = "grey95", colour = "white"),
@@ -38,7 +38,6 @@ theme_nice = function(base_size = 20, base_family = ""){
         legend.direction = NULL,
         legend.justification = "center",
         legend.box = NULL,
-
         panel.background = element_rect(fill = "white",colour = NA),
         panel.border = element_rect(size=.5,color="#564D49",fill=NA),
         panel.grid.major = element_line(colour = "#F5F5F5", size = 0.04),
@@ -46,12 +45,11 @@ theme_nice = function(base_size = 20, base_family = ""){
         panel.margin = grid:::unit(2, "lines"),
         panel.margin.x = NULL,
         panel.margin.y = NULL,
-
         strip.background = element_rect(size=.5, color="#564D49", fill = "grey80", colour = NA),
         strip.text.x = element_text(size=rel(.75)),
         strip.text.y = element_text(angle = -90, size=rel(1.2)),
-
         plot.background = element_rect(colour = "white"),
         plot.title = element_text(size = rel(1.7)),
-        plot.margin = grid:::unit(c(1, 1, 1, 1), "lines"), complete = TRUE)
+        plot.margin = grid:::unit(c(1, 1, 1, 1), "lines"), 
+        complete = TRUE)
 }
